@@ -1,0 +1,53 @@
+<!-- Author: Daniel Benjamin Perez Morales -->
+<!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
+<!-- Email: danielperezdev@proton.me -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Bros Games</title>
+    <script src="./phaser.min.js"></script>
+    <script type="module"
+        src="./game.mjs"></script>
+</head>
+
+<body>
+
+    <style>
+        body {
+            display: grid;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+            /* Evita el desplazamiento */
+        }
+    </style>
+    <script>
+        // Deshabilitar zoom con la rueda del ratón
+        window.addEventListener('wheel', function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+        // Deshabilitar zoom con Ctrl + '+' y Ctrl + '-'
+        window.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && (event.key === '+' || event.key === '-')) {
+                event.preventDefault();
+            }
+        });
+
+        // Deshabilitar zoom con Ctrl + rueda del ratón
+        window.addEventListener('mousewheel', function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+    <div id="game"></div>
+</body>
+
+</html>
